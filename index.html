@@ -1,31 +1,25 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>fg</title>
-  <style>
-    *{box-sizing:border-box;margin:0;padding:0}
-    html,body{height:100%;}
-    
-    video#bgVideo{
-      position:fixed;
-      inset:0;
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      background:#000;
-    }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Fullscreen GIF Player</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;}
+
+
+img#bgGif{
+position:fixed;
+inset:0;
+width:100%;
+height:100%;
+object-fit:cover;
+background:#000;
+}
+</style>
 </head>
 <body>
-  <video id="bgVideo" autoplay muted loop playsinline preload="auto">
-    <source src="video.mp4" type="video/mp4">
-    hopefully you cant see this bro
-  </video>
-  <script>
-    const video = document.getElementById('bgVideo');
-    video.play().catch(err => console.warn('Autoplay blocked:', err));
-  </script>
+<img id="bgGif" src="video.gif" alt="Fullscreen GIF" />
 </body>
 </html>
