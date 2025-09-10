@@ -1,25 +1,31 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Fullscreen GIF Player</title>
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%;}
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fullscreen Video Player</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%;}
 
-
-img#bgGif{
-position:fixed;
-inset:0;
-width:100%;
-height:100%;
-object-fit:cover;
-background:#000;
-}
-</style>
+    video#bgVideo{
+      position:fixed;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      background:#000;
+    }
+  </style>
 </head>
 <body>
-<img id="bgGif" src="video.gif" alt="Fullscreen GIF" />
+  <video id="bgVideo" autoplay muted loop playsinline preload="auto">
+    <source src="video.webm" type="video/webm">
+    Your browser does not support the HTML5 Video element.
+  </video>
+  <script>
+    const video = document.getElementById('bgVideo');
+    video.play().catch(err => console.warn('Autoplay blocked:', err));
+  </script>
 </body>
 </html>
